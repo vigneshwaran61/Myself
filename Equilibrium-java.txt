@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class New{
+    public static void main(String[] args){
+        Scanner obj=new Scanner(System.in);
+        System.out.println("enter the size of your array:");
+        int size=obj.nextInt();
+        int[] arr=new int[size];
+        System.out.println("enter the array of elements containing only numbers!: ");
+        for(int i=0;i<=size-1;i++){
+            int temp=obj.nextInt();
+                arr[i]=temp;
+      
+        }
+        int lSum=0;
+        int rSum=0;
+        //left-part
+        for(int i=(arr.length/2)-1;i>-1;i--){
+            lSum = lSum + arr[i];
+        }
+        //right-part
+        for(int i=(arr.length/2)+1;i<arr.length;i++){
+            rSum = rSum + arr[i];
+        }
+        System.out.println("left-Sum:"+lSum+"\t"+"right-Sum:"+rSum);
+        if(lSum==rSum){
+            System.out.println("the equilibrium point at position:"+arr.length/2);
+        }
+        else{
+            System.out.println("there is no equilibrium point!");
+        }
+        obj.close();
+
+    }
+}
